@@ -15,5 +15,8 @@ pool = ConnectionPool(
     DATABASE_URL,
     kwargs={"row_factory": dict_row},
     check=ConnectionPool.check_connection,
+    min_size=2,
+    max_size=10,
     open=False,
 )
+
